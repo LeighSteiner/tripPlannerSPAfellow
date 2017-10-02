@@ -60,31 +60,11 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
-
-const mapboxgl = __webpack_require__(1);
-const buildMarker = __webpack_require__(3);
-
-mapboxgl.accessToken = "pk.eyJ1IjoiY2Fzc2lvemVuIiwiYSI6ImNqNjZydGl5dDJmOWUzM3A4dGQyNnN1ZnAifQ.0ZIRDup0jnyUFVzUa_5d1g";
-
-const map = new mapboxgl.Map({
-  container: "map",
-  center: [-74.009, 40.705], // FullStack coordinates
-  zoom: 12, // starting zoom
-  style: "mapbox://styles/mapbox/streets-v10" // mapbox has lots of different map styles available.
-});
-
-const marker = buildMarker("activities", [-74.009, 40.705]);
-marker.addTo(map);
-
-
-/***/ }),
-/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {var require;var require;(function(f){if(true){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.mapboxgl = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return require(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(_dereq_,module,exports){
@@ -551,6 +531,26 @@ module.exports={"$version":8,"$root":{"version":{"required":true,"type":"enum","
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+const mapboxgl = __webpack_require__(0);
+const buildMarker = __webpack_require__(3);
+
+mapboxgl.accessToken = "YOUR API TOKEN HERE";
+
+const map = new mapboxgl.Map({
+  container: "map",
+  center: [-74.009, 40.705], // FullStack coordinates
+  zoom: 12, // starting zoom
+  style: "mapbox://styles/mapbox/streets-v10" // mapbox has lots of different map styles available.
+});
+
+const marker = buildMarker("activities", [-74.009, 40.705]);
+marker.addTo(map);
+
+
+/***/ }),
 /* 2 */
 /***/ (function(module, exports) {
 
@@ -581,7 +581,7 @@ module.exports = g;
 /* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
-const { Marker } = __webpack_require__(1);
+const { Marker } = __webpack_require__(0);
 
 const iconURLs = {
   hotels: "http://i.imgur.com/D9574Cu.png",
